@@ -1,0 +1,58 @@
+body, p {
+	font-family: Arial, Helvetica, Sans-Serif;
+	background-color: #2F4F4F;
+	color: #E9967A;
+}
+th {
+	font-weight: bold;
+	text-align: center;
+	vertical-align: bottom;
+	padding: 0;
+	border-spacing: 0;
+}
+td {
+	font-family: Arial, Helvetica, Sans-Serif;
+	text-align: center;
+	border: 0px solid #cccccc;
+	border-collapse: collapse;
+}
+input {
+	border: 0;
+	font-size: 16pt;
+}
+.val {
+	width: 30;
+	background-color: #ffffff;
+	color: #2F4F4F;
+}
+.names {
+	background-color: #ffffff;
+}
+.scaledPage {
+	transform: scale(1.5);
+	transform-origin: left top;
+}
+.scaledTable {
+	border: #ff0000;
+}
+.selectedCell {
+	color: #2F4F4F;
+	font-weight: bold;
+	background-color: #52be80;
+}
+.widget {
+	font-family: 'Rubik Mono One';
+	font-size: 24pt;
+	border-style: none;
+}
+.widgetlbl {
+	font-size: 18pt;
+	border-style: none;
+}
+.outs {
+	font-family: 'Rubik Mono One';
+	text-align: left;
+	font-size: large;
+	font-weight: bold;
+	color: #52be80;
+}
