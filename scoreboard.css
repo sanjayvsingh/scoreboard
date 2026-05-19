@@ -21,7 +21,7 @@ input {
 	font-size: 16pt;
 }
 .val {
-	width: 30;
+	min-width: 36px;
 	background-color: #ffffff;
 	color: #2F4F4F;
 }
@@ -29,7 +29,6 @@ input {
 	background-color: #ffffff;
 }
 .scaledPage {
-	transform: scale(1.5);
 	transform-origin: left top;
 }
 .scaledTable {

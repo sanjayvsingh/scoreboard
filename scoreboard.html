@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Scoreboard</title>
+  <link href="https://fonts.googleapis.com/css?family=Rubik+Mono+One" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="scoreboard.css">
+  <script src="scoreboard.js" defer></script>
+  <style>
+    #landingView { padding: 20px; }
+    .landing-section h2 { margin: 0 0 12px; font-size: 16pt; color: #E9967A; font-weight: normal; }
+    .landing-divider { border: 0; border-top: 1px solid #4a7070; margin: 24px 0; }
+    #scoreHeader { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 6px; }
+    #gameCodeDisplay { font-size: 11pt; color: #52be80; letter-spacing: 2px; }
+    #scoreContainer { display: inline-block; }
+    .new-game-link { color: #E9967A; font-size: 11pt; text-decoration: none; }
+    .new-game-link:hover { text-decoration: underline; }
+    .error-msg { color: #e74c3c; font-size: 12pt; margin-top: 8px; display: none; }
+  </style>
+</head>
+<body>
+<div class="scaledPage">
+
+  <div id="landingView">
+    <div class="landing-section">
+      <h2>New Game</h2>
+      <input id="vNameInput" value="Visitor" onfocus="if(this.value==='Visitor')this.value=''">
+      <input id="hNameInput" value="Home" onfocus="if(this.value==='Home')this.value=''">
+      <input type="button" value="Create Game" onclick="createGame()">
+      <div id="createError" class="error-msg"></div>
+    </div>
+    <hr class="landing-divider">
+    <div class="landing-section">
+      <h2>Join Game</h2>
+      <input id="codeInput" placeholder="Game Code" inputmode="numeric" maxlength="6">
+      <input type="button" value="Join Game" onclick="joinGame()">
+      <div id="joinError" class="error-msg"></div>
+    </div>
+  </div>
+
+  <div id="scoreboardView" style="display:none">
+    <div id="scoreHeader">
+      <span id="gameCodeDisplay"></span>
+      <a href="#" onclick="newGame(); return false;" class="new-game-link">New Game</a>
+    </div>
+    <div id="scoreContainer">
+      <table class="scaledTable" id="scoreTable"></table>
+      <table id="widgetTable"><tr>
+        <td class="widget" onclick="chgOuts(-1)">-</td>
+        <td class="widgetlbl">Outs</td>
+        <td class="widget" onclick="chgOuts(1)">+</td>
+
+        <td>&nbsp;&nbsp;</td>
+        <td class="widget" onclick="chgRuns(-1)">-</td>
+        <td class="widgetlbl">Runs</td>
+        <td class="widget" onclick="chgRuns(1)">+</td>
+
+        <td>&nbsp;&nbsp;</td>
+        <td class="widget" onclick="chgHits(-1)">-</td>
+        <td class="widgetlbl">Hits</td>
+        <td class="widget" onclick="chgHits(1)">+</td>
+
+        <td>&nbsp;&nbsp;</td>
+        <td class="widget" onclick="chgErrors(-1)">-</td>
+        <td class="widgetlbl">Errors</td>
+        <td class="widget" onclick="chgErrors(1)">+</td>
+
+        <td>&nbsp;&nbsp;</td>
+        <td class="widget" onclick="chgKs(-1)">-</td>
+        <td class="widgetlbl">Ks</td>
+        <td class="widget" onclick="chgKs(1)">+</td>
+      </tr></table>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>
